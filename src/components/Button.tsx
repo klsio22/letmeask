@@ -1,11 +1,13 @@
-type ButtonProps = {
-  children?: string;
-};
+import { useState } from "react";
 
-export function Button(props: ButtonProps) {
-  return (
-    <div>
-      <button>{props.children || 'Default'}</button>
-    </div>
-  );
+export function Button() {
+ const [counter] = useState(0);
+
+
+  const imcrement = () => {
+   // counter += 1;
+    console.log(counter)
+  };
+
+  return <button onClick={imcrement} >{counter}</button>;
 }
