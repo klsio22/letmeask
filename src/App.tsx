@@ -1,7 +1,7 @@
-import { Button } from "./components/Button";
+import { Home } from "./pages/home";
 
 function App() {
-  return <Button />;
+  return <Home/>;
 }
 
 export default App;
