@@ -1,13 +1,21 @@
-import { useState } from "react";
 
-export function Button() {
-  const [counter, setCounter] = useState(0);
+import  '../styles/button.scss'
 
-  let imcrement = () => {
-    // counter += 1;
-    setCounter(counter + 1)
-    console.log(counter);
-  };
+import {ButtonHTMLAttributes} from 'react';
 
-  return <button onClick={imcrement}>{counter}</button>;
+/* Fornece propriedades e métodos (além da interface HTMLElement regular, ela também está disponível por herança) para manipular elementos. */
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
+
+/* type ButtonProps = {
+  type: string;
 }
+ */
+
+export function Button(props: ButtonProps ) {
+  /* 
+    Tecnica de spread operator , com essa tecnica é possivel distribuir 
+    todas as propriedade vindas por parâmetro 
+  */
+  return <button className="button" {...props} />;
+}
+
