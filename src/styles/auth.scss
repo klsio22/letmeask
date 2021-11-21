@@ -1,3 +1,5 @@
+$color-gray: #a8a8b3;
+
 #page-auth {
   display: flex;
   align-items: stretch;
@@ -55,33 +57,49 @@
       align-self: center;
     }
 
-    button{
-      border: 1px solid #a8a8b3;
-    }
-  }
-
-  form {
-    input {
-      height: 50px;
-      border-radius: 8px;
-      padding: 0 16px;
-      background: #fff;
-      border: 1px solid #a8a8b3;
-    }
-
     button {
       border: 1px solid #a8a8b3;
-      margin-top: 16px;
     }
 
-    button,
-    input {
-      width: 100%;
+    h2 {
+      font-size: 24px;
+      margin: 64px 0 24px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    form {
+      input {
+        height: 50px;
+        border-radius: 8px;
+        padding: 0 16px;
+        background: #fff;
+        border: 1px solid #a8a8b3;
+      }
+
+      button {
+        border: 1px solid #a8a8b3;
+        margin-top: 16px;
+      }
+
+      button,
+      input {
+        width: 100%;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      color: #737380;
+      margin-top: 16px;
+
+      a {
+        color: #e559f9;
+      }
     }
   }
 
-  .create-room{
-    border-color:#000;
+  .create-room {
+    border-color: #000;
     margin-top: 64px;
     height: 50px;
     border-radius: 8px;
@@ -98,14 +116,13 @@
 
     transition: filter 0.2s;
 
-    img{
+    img {
       margin-right: 8px;
     }
 
-    &:hover{
+    &:hover {
       filter: brightness(0.9);
     }
-
   }
 
   .separator {
@@ -114,24 +131,22 @@
     margin: 32px 0;
 
     display: flex;
-    align-items:center;
+    align-items: center;
 
-    &::before{
-      content: '';
-      flex : 1;
+    &::before {
+      content: "";
+      flex: 1;
       height: 1px;
       background: #a8a8b3;
       margin-right: 16px;
     }
 
-    &::after{
-      content: '';
-      flex : 1;
+    &::after {
+      content: "";
+      flex: 1;
       height: 1px;
       background: #a8a8b3;
       margin-left: 16px;
     }
-
-
   }
 }
