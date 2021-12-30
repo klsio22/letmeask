@@ -1,11 +1,13 @@
+@import "./variables";
+
 .button {
-  border-color: #000;
+  border-color: $color-black-primary;
   margin-top: 64px;
   height: 50px;
   border-radius: 8px;
   font-weight: 500;
   background: #835afd;
-  color: #000;
+  color: $color-white-primary;
   padding: 0 32px;
 
   display: flex;

@@ -1,21 +1,17 @@
-import {BrowserRouter as Router, useRoutes } from "react-router-dom";
+import { createContext, useState } from "react";
 
-import { Home } from "./pages/home";
-import { NewRoom } from "./pages/NewRoom";
+import { AppRoutes, Router } from "./AppRoutes";
 
-const AppRoutes = () =>{
-  let routes = useRoutes([
-    {path:"/", element: <Home />},
-    {path:"/newRoom", element: <NewRoom />}
-  ])
-
-  return routes
-} 
+export const TestContext = createContext({} as any);
 
 function App() {
+  const [value, setValue] = useState("Teste")
+
   return (
     <Router>
-      <AppRoutes />
+      <TestContext.Provider value={{value,setValue}}>
+        <AppRoutes />
+      </TestContext.Provider>
     </Router>
   );
 }

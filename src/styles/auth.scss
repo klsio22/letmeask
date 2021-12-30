@@ -1,4 +1,4 @@
-$color-gray: #a8a8b3;
+@import "./variables";
 
 #page-auth {
   display: flex;
@@ -9,7 +9,7 @@ $color-gray: #a8a8b3;
     flex: 7;
 
     background: #835afd;
-    color: #fff;
+    color: $color-white-primary;
 
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@ $color-gray: #a8a8b3;
       font-size: 24px;
       line-height: 32px;
       margin-top: 16px;
-      color: #f8f8f8;
+      color: $color-white-secondary;
     }
   }
 
@@ -58,13 +58,14 @@ $color-gray: #a8a8b3;
     }
 
     button {
-      border: 1px solid #a8a8b3;
+      border: 1px solid $color-gray-primary;
     }
 
     h2 {
       font-size: 24px;
       margin: 64px 0 24px;
       font-family: "Poppins", sans-serif;
+      color: $color-black-secondary;
     }
 
     form {
@@ -72,12 +73,12 @@ $color-gray: #a8a8b3;
         height: 50px;
         border-radius: 8px;
         padding: 0 16px;
-        background: #fff;
-        border: 1px solid #a8a8b3;
+        background: $color-white-primary;
+        border: 1px solid $color-gray-primary;
       }
 
       button {
-        border: 1px solid #a8a8b3;
+        border: 1px solid $color-gray-primary;
         margin-top: 16px;
       }
 
@@ -99,13 +100,13 @@ $color-gray: #a8a8b3;
   }
 
   .create-room {
-    border-color: #000;
+    border-color: $color-black-primary;
     margin-top: 64px;
     height: 50px;
     border-radius: 8px;
     font-weight: 500;
-    background: white;
-    color: #000;
+    background: $color-white-primary;
+    color: $color-black-primary;
 
     display: flex;
     align-items: center;
@@ -127,7 +128,7 @@ $color-gray: #a8a8b3;
 
   .separator {
     font-size: 14px;
-    color: #a8a8b3;
+    color: $color-gray-primary;
     margin: 32px 0;
 
     display: flex;
@@ -137,7 +138,7 @@ $color-gray: #a8a8b3;
       content: "";
       flex: 1;
       height: 1px;
-      background: #a8a8b3;
+      background: $color-gray-primary;
       margin-right: 16px;
     }
 
@@ -145,7 +146,7 @@ $color-gray: #a8a8b3;
       content: "";
       flex: 1;
       height: 1px;
-      background: #a8a8b3;
+      background: $color-gray-primary;
       margin-left: 16px;
     }
   }
