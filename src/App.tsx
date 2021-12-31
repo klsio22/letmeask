@@ -1,17 +1,13 @@
-import { createContext, useState } from "react";
-
 import { AppRoutes, Router } from "./AppRoutes";
-
-export const TestContext = createContext({} as any);
+import { AuthContextProvider } from "./contexts/AuthContext";
 
 function App() {
-  const [value, setValue] = useState("Teste")
 
   return (
     <Router>
-      <TestContext.Provider value={{value,setValue}}>
+      <AuthContextProvider>
         <AppRoutes />
-      </TestContext.Provider>
+      </AuthContextProvider>
     </Router>
   );
 }

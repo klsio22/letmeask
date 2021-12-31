@@ -1,14 +1,19 @@
-import { Link } from "react-router-dom";
-
 import illustration from "../assets/images/illustration.svg";
 import logImg from "../assets/images/logo.svg";
 
 import "../styles/auth.scss";
 import { Button } from "../components/Button";
 
+import { Link } from "react-router-dom";
+/* import { useAuth } from "../hooks/useAuth";
+ */
+
 //webpack (snowpack,vite, ...) é um empacotador de módulo JavaScript de código aberto
 
 export function NewRoom() {
+/*   const { user } = useAuth()
+ */ 
+
   return (
     <div id="page-auth">
       <aside>

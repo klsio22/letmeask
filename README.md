@@ -11,6 +11,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [React](https://reactjs.org)
 - [Firebase](https://firebase.google.com/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Sass](https://sass-lang.com/)
+- [react-router-dom v6](https://reactrouter.com/docs/en/v6/getting-started/overview)
 
 ## 🚀 Como executar
 
@@ -37,6 +39,10 @@ Lembrando que será necessário criar uma conta no [Firebase](https://firebase.g
 
 Letmeask é perfeito para criadores de conteúdos poderem criar salas de Q&A com o seu público, de uma forma muito organizada e democrática. 
 
+
+### Documentação de pacotes usados durante o projeto no notion:
+
+🌍 [Documentação NLW-Heat](https://www.notion.so/Documenta-o-NLW-Together-React-99ffa629bb0347439d01dd15aaa2fab9)
 
 ## 🔖 Layout
 

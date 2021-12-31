@@ -2,27 +2,20 @@ import illustration from "../assets/images/illustration.svg";
 import logImg from "../assets/images/logo.svg";
 import googleIconImg from "../assets/images/google-icon-light.svg";
 
-import { firebase, auth } from "../services/firebase";
-
 import "../styles/auth.scss";
 
 import { Button } from "../components/Button";
 import { useNavigate } from "react-router-dom";
-
-import { useContext } from "react";
-import { TestContext } from "../App";
-
-//webpack (snowpack,vite, ...) é um empacotador de módulo JavaScript de código aberto
+import { useAuth } from "../hooks/useAuth";
 
 export function Home() {
   const history = useNavigate();
+  const {user, signInWithGoogle} = useAuth();
 
-
-  function handleCreateRoom() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider).then((result) => {
-      console.log(result);
-    });
+  async function handleCreateRoom() {
+    if(!user){
+      await signInWithGoogle()
+    }
 
     history("/rooms/new");
   }

@@ -4,10 +4,10 @@ import App from "./App";
 
 import "./services/firebase";
 import "./styles/global.scss";
- 
+
 ReactDOM.render(
   <React.StrictMode>
-      <App />
+    <App />
   </React.StrictMode>,
   document.querySelector("#root")
 );
