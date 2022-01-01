@@ -13,4 +13,4 @@ const AppRoutes = () => {
   return routes;
 };
 
-export { AppRoutes, Router };NewRoom
+export { AppRoutes, Router };

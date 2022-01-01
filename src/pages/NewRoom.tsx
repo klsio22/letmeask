@@ -19,10 +19,8 @@ export function NewRoom() {
 
     //console.log(newRoom);
 
-    if (newRoom.trim() === "") {
-      return;
-    }
-
+    if (newRoom.trim() === "") return;
+  
     const roomRef = database.ref("rooms");
 
     const firebaseRoom = await roomRef.push({
