@@ -1,18 +1,37 @@
 import illustration from "../assets/images/illustration.svg";
 import logImg from "../assets/images/logo.svg";
-
 import "../styles/auth.scss";
 import { Button } from "../components/Button";
 
-import { Link } from "react-router-dom";
-/* import { useAuth } from "../hooks/useAuth";
- */
+import { Link, useNavigate } from "react-router-dom";
+import { FormEvent, useState } from "react";
 
-//webpack (snowpack,vite, ...) é um empacotador de módulo JavaScript de código aberto
+import { useAuth } from "../hooks/useAuth";
+import { database } from "../services/firebase";
 
 export function NewRoom() {
-/*   const { user } = useAuth()
- */ 
+  const { user } = useAuth();
+  const history = useNavigate();
+  const [newRoom, setNewRoom] = useState("");
+
+  async function handleCreateRoom(event: FormEvent) {
+    event.preventDefault();
+
+    //console.log(newRoom);
+
+    if (newRoom.trim() === "") {
+      return;
+    }
+
+    const roomRef = database.ref("rooms");
+
+    const firebaseRoom = await roomRef.push({
+      title: newRoom,
+      authorId: user?.id,
+    });
+
+    history(`/rooms/${firebaseRoom.key}`);
+  }
 
   return (
     <div id="page-auth">
@@ -28,8 +47,13 @@ export function NewRoom() {
         <div className="main-content">
           <img src={logImg} alt="Letmeask" />
           <h2>Criar uma nova sala</h2>
-          <form>
-            <input type="text" placeholder="Nome da Sala" />
+          <form onSubmit={handleCreateRoom}>
+            <input
+              type="text"
+              placeholder="Nome da Sala"
+              onChange={(event) => setNewRoom(event.target.value)}
+              value={newRoom}
+            />
             <Button type="submit">Criar sala</Button>
             <p>
               Quer entrar em uma sala existente ?

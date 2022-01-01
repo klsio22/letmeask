@@ -1,3 +1,5 @@
+@import "./variables";
+
 * {
   margin: 0;
   padding: 0;
@@ -5,13 +7,13 @@
 }
 
 body {
-  background: #f8f8f8;
-  color: #29292e;
+  background: $color-white-secondary;
+  color: $color-black-secondary;
 }
 
 body,
 input,
 button,
 textarea {
-  font: 400 16px 'Roboto', sans-serif;
+  font: $font-medium;
 }

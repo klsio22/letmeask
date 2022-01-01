@@ -4,20 +4,29 @@ import googleIconImg from "../assets/images/google-icon-light.svg";
 
 import "../styles/auth.scss";
 
+import { FormEvent, useState } from "react";
 import { Button } from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
 export function Home() {
   const history = useNavigate();
-  const {user, signInWithGoogle} = useAuth();
-
+  const { user, signInWithGoogle } = useAuth();
+  const [roomCode, setRoomCode] = useState("");
   async function handleCreateRoom() {
-    if(!user){
-      await signInWithGoogle()
+    if (!user) {
+      await signInWithGoogle();
     }
 
     history("/rooms/new");
+  }
+
+  async function handleJoinRoom(event: FormEvent) {
+    event.preventDefault();
+
+    
+
+
   }
 
   return (
@@ -41,7 +50,12 @@ export function Home() {
           <div className="separator"> ou entre em uma sala</div>
 
           <form>
-            <input type="text" placeholder="Digite o codigo da sala" />
+            <input
+              type="text"
+              placeholder="Digite o codigo da sala"
+              onChange={(event) => setRoomCode(event.target.value)}
+              value={roomCode}
+            />
             <Button type="submit">Entrar na sala</Button>
           </form>
         </div>
