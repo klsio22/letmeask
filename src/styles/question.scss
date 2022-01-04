@@ -8,7 +8,6 @@
 
   & + .question {
     margin-top: 8px;
-    
   }
 
   p {
@@ -36,6 +35,37 @@
         color: $color-gray-secondary;
         font-size: 14px;
       }
+    }
+
+    button {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      transition: filter 0.2s;
+
+      span {
+        padding: 2px 0;
+      }
+
+      &.like-button {
+        display: flex;
+        color: $color-gray-secondary;
+        gap: 8px;
+
+        &.liked{
+          color: $color-purple-primary;
+
+          svg path{
+            stroke: $color-purple-primary;
+          }
+        }
+        
+      }
+
+      &:hover{
+        filter: brightness(0.7);
+      }
+
     }
   }
 }

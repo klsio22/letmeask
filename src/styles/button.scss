@@ -22,6 +22,12 @@
     margin-right: 8px;
   }
 
+  &.outlined {
+    background: $color-white-primary;
+    border: 1px solid $color-purple-primary;
+    color: $color-purple-primary;
+  }
+
   &:not(:disabled):hover {
     filter: brightness(0.9);
   }
