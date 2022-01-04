@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { FormEvent, useEffect, useState } from "react";
 import { useAuth } from "../hooks/useAuth";
 import { database } from "../services/firebase";
+import { Question } from "../components/Question";
 
 type FirebaseQuestions = Record<
   string,
@@ -22,7 +23,7 @@ type FirebaseQuestions = Record<
   }
 >;
 
-type Question = {
+type QuestionType = {
   id: string;
   author: {
     name: string;
@@ -40,7 +41,7 @@ export function Room() {
   const params = useParams();
   const roomId = params.id;
   const [newQuestion, setNewQuestion] = useState("");
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [questions, setQuestions] = useState<QuestionType[]>([]);
   const [title, setTitle] = useState("");
 
   useEffect(() => {
@@ -62,7 +63,7 @@ export function Room() {
         }
       );
 
-      setTitle(databaseRomom.title)
+      setTitle(databaseRomom.title);
       setQuestions(parsedQuestion);
       console.log(parsedQuestion);
       //console.log(room.val());
@@ -132,7 +133,17 @@ export function Room() {
           </div>
         </form>
 
-        {JSON.stringify(questions)}
+        <div className="question-list">
+          {questions.map((question) => {
+            return (
+              <Question
+                key={question.id}
+                content={question.content}
+                author={question.author}
+              />
+            );
+          })}
+        </div>
       </main>
     </div>
   );

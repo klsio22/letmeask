@@ -1,0 +1,41 @@
+@import "./variables";
+
+.question {
+  background: $color-white-tertiary;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px $color-black-transparent;
+  padding: 24px;
+
+  & + .question {
+    margin-top: 8px;
+    
+  }
+
+  p {
+    color: $color-black-secondary;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+
+    .user-info {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+
+      span {
+        margin-left: 8px;
+        color: $color-gray-secondary;
+        font-size: 14px;
+      }
+    }
+  }
+}

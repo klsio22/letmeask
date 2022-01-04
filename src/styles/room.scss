@@ -49,7 +49,7 @@ main {
       padding: 16px;
       border-radius: 8px;
       background: $color-white-secondary;
-      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 2px 2px $color-black-transparent;
       resize: vertical;
       min-height: 130px;
     }
@@ -78,9 +78,9 @@ main {
         }
       }
 
-     > span {
+      > span {
         font-size: 14px;
-        color: #737380;
+        color: $color-gray-secondary;
         font-weight: 500;
 
         button {
@@ -94,5 +94,9 @@ main {
         }
       }
     }
+  }
+
+  .question-list {
+    margin: 32px 0;
   }
 }

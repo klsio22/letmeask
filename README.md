@@ -9,7 +9,7 @@
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [React](https://reactjs.org)
-- [Firebase](https://firebase.google.com/)
+- [Firebase v9](https://firebase.google.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Sass](https://sass-lang.com/)
 - [react-router-dom v6](https://reactrouter.com/docs/en/v6/getting-started/overview)
