@@ -10,6 +10,19 @@
     margin-top: 8px;
   }
 
+  &.highlighted {
+    background: #f4f0ff;
+    border: 1px solid $color-purple-primary;
+
+    footer .user-info span {
+      color: $color-black-secondary;
+    }
+  }
+
+  &.answered {
+    background: #dbdcdd;
+  }
+
   p {
     color: $color-black-secondary;
   }
@@ -37,6 +50,10 @@
       }
     }
 
+    > div {
+      display: flex;
+      gap: 16px;
+    }
     button {
       border: 0;
       background: transparent;
@@ -52,20 +69,18 @@
         color: $color-gray-secondary;
         gap: 8px;
 
-        &.liked{
+        &.liked {
           color: $color-purple-primary;
 
-          svg path{
+          svg path {
             stroke: $color-purple-primary;
           }
         }
-        
       }
 
-      &:hover{
+      &:hover {
         filter: brightness(0.7);
       }
-
     }
   }
 }

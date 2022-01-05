@@ -1,5 +1,8 @@
 import logImg from "../assets/images/logo.svg";
 import deleteImg from "../assets/images/delete.svg";
+import checkImg from "../assets/images/check.svg";
+import answerImg from "../assets/images/answer.svg";
+
 import "../styles/room.scss";
 
 import { Button } from "../components/Button";
@@ -19,18 +22,30 @@ export function AdminRoom() {
   const { questions, title } = useRoom(`${roomId}`);
   const history = useNavigate();
 
-  async function handleEndRoom(){
+  async function handleEndRoom() {
     database.ref(`rooms/${roomId}`).update({
       closedAt: new Date(),
-    })
+    });
 
-    history("/")
+    history("/");
   }
 
   async function handleDeleteQuestion(questionId: string) {
     if (window.confirm("Tem certeza que você des")) {
       await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
     }
+  }
+
+  async function handleCheckQuestionAsAnsowered(questionId: string) {
+    await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+      isAnswered: true,
+    });
+  }
+
+  async function handleHighLightQuestion(questionId: string) {
+    await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+      isHighlighted: true,
+    });
   }
 
   return (
@@ -41,7 +56,9 @@ export function AdminRoom() {
 
           <div>
             <RoomCode code={roomId} />
-            <Button isOutlined onClick={handleEndRoom}>Encerrar sala</Button>
+            <Button isOutlined onClick={handleEndRoom}>
+              Encerrar sala
+            </Button>
           </div>
         </div>
       </header>
@@ -59,7 +76,31 @@ export function AdminRoom() {
                 key={question.id}
                 content={question.content}
                 author={question.author}
+                isAnswered={question.isAnswered}
+                isHighlighted={question.isHighlighted}
               >
+                {!question.isAnswered && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        handleCheckQuestionAsAnsowered(question.id)
+                      }
+                    >
+                      <img
+                        src={checkImg}
+                        alt="Marcar pergunta como repondida"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleHighLightQuestion(question.id)}
+                    >
+                      <img src={answerImg} alt="Dar destaque à pergunta" />
+                    </button>
+                  </>
+                )}
+
                 <button
                   type="button"
                   onClick={() => handleDeleteQuestion(question.id)}
