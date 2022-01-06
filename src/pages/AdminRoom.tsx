@@ -32,7 +32,7 @@ export function AdminRoom() {
   }
 
   async function handleDeleteQuestion(questionId: string) {
-    if (window.confirm("Tem certeza que você des")) {
+    if (window.confirm("Tem certeza que você deseja remover a pergunta")) {
       await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
     }
   }
