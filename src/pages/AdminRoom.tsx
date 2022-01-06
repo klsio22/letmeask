@@ -4,6 +4,7 @@ import checkImg from "../assets/images/check.svg";
 import answerImg from "../assets/images/answer.svg";
 
 import "../styles/room.scss";
+import "../styles/room-mobile.scss"
 
 import { Button } from "../components/Button";
 import { RoomCode } from "../components/RoomCode";

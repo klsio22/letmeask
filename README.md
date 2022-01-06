@@ -37,8 +37,9 @@ Lembrando que será necessário criar uma conta no [Firebase](https://firebase.g
 
 ## 💻 Projeto
 
-Letmeask é perfeito para criadores de conteúdos poderem criar salas de Q&A com o seu público, de uma forma muito organizada e democrática. 
+[Versão do Projeto online](https://letmeask-dbeff.web.app/)
 
+Letmeask é perfeito para criadores de conteúdos poderem criar salas de Q&A com o seu público, de uma forma muito organizada e democrática.
 
 ### Documentação de pacotes usados durante e anotações o projeto:
 

@@ -1,5 +1,7 @@
 import logImg from "../assets/images/logo.svg";
+
 import "../styles/room.scss";
+import "../styles/room-mobile.scss"
 
 import { Button } from "../components/Button";
 import { RoomCode } from "../components/RoomCode";

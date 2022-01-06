@@ -1,0 +1,24 @@
+@media (max-width: 620px) {
+  #page-room {
+    min-width: 390px;
+    header .content,
+    main form .form-footer, .room-title,
+    header .content > div {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    main {
+      .room-title{
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  main {
+    margin: 1rem;
+  }
+}

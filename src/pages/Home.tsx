@@ -3,6 +3,7 @@ import logImg from "../assets/images/logo.svg";
 import googleIconImg from "../assets/images/google-icon-light.svg";
 
 import "../styles/auth.scss";
+import "../styles/auth-mobile.scss"
 
 import { FormEvent, useState } from "react";
 import { Button } from "../components/Button";

@@ -34,7 +34,6 @@ main {
     align-items: center;
 
     h1 {
-      font: $font-standard;
       font-size: 24px;
       color: $color-black-secondary;
     }
@@ -47,6 +46,7 @@ main {
       color: $color-white-primary;
       font-weight: 500;
       font-size: 14px;
+      text-align: center;
     }
   }
 
